@@ -12,5 +12,7 @@ DomainErrorTranslator._directories = {
 'ROLE_NOT_FOUND': new InvariantError('tidak dapat membuat user baru karena role_id tidak valid'),
 'CATEGORY_ID_NOT_FOUND': new InvariantError('tidak dapat membuat user baru karena category_id tidak valid'),
 'USER_EMAIL.NOT_MATCH': new InvariantError('email tidak di temukan'),
+'CATEGORY_NAME_ALREADY_EXISTS': new InvariantError('category yang Anda gunakan sudah terdaftar'),
+'ROLE_NAME_ALREADY_EXISTS': new InvariantError('role yang Anda gunakan sudah terdaftar'),
 }
 module.exports = DomainErrorTranslator

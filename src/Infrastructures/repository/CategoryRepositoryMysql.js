@@ -1,6 +1,7 @@
 const InvariantError = require("../../Commons/InvariantError");
 const CategoryRepository = require("../../Domains/category/CategoryRepository");
 const AddedCategory = require("../../Domains/category/entities/AddedCategory");
+const GetCategory = require("../../Domains/category/entities/GetCategory");
 
 class CategoryRepositoryMysql extends CategoryRepository {
   constructor(prisma) {
@@ -23,6 +24,12 @@ class CategoryRepositoryMysql extends CategoryRepository {
     if (category) {
       throw new InvariantError("CATEGORY_NAME_ALREADY_EXISTS");
     }
+  }
+
+  async getCategory() {
+    const categories = await this._prisma.category.findMany();
+    console.log(categories,'catehgasdasdasd');
+    return categories.map((category) => new GetCategory(category));
   }
 
   async findCategoryById(id) {

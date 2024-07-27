@@ -9,5 +9,6 @@ describe('CategoryRepository interface', () => {
     await expect(categoryRepository.addCategory({})).rejects.toThrow('CATEGORY_REPOSITORY.METHOD_NOT_IMPLEMENTED')
     await expect(categoryRepository.verifyCategoryName('')).rejects.toThrow('CATEGORY_REPOSITORY.METHOD_NOT_IMPLEMENTED')
     await expect(categoryRepository.findCategoryById('')).rejects.toThrow('CATEGORY_REPOSITORY.METHOD_NOT_IMPLEMENTED')
+    await expect(categoryRepository.getCategory()).rejects.toThrow('CATEGORY_REPOSITORY.METHOD_NOT_IMPLEMENTED')
   })
 })

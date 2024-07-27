@@ -3,6 +3,7 @@ const mysql = require('../../../Infrastructures/database/mysql/mysql');
 const CategoryTableHelper = require("../../../lib/CategoryTableHelper");
 const CategoryRepositoryMysql = require("../CategoryRepositoryMysql");
 const InvariantError = require("../../../Commons/InvariantError");
+const GetCategory = require("../../../Domains/category/entities/GetCategory");
 
 describe('CategoryRepositoryMysql', () => {
   beforeEach(async () => {
@@ -68,6 +69,23 @@ describe('CategoryRepositoryMysql', () => {
 
       // Action & Assert
       await expect(categoryRepository.findCategoryById(id)).resolves.not.toThrow(InvariantError);
+    });
+  });
+
+  describe('getCategory function', () => {
+    it('should return categories correctly', async () => {
+      // Arrange
+      await CategoryTableHelper.addCategory({ name: 'sports' });
+      await CategoryTableHelper.addCategory({ name: 'technology' });
+      const categoryRepository = new CategoryRepositoryMysql(mysql);
+
+      // Action
+      const categories = await categoryRepository.getCategory();
+
+      // Assert
+      expect(categories.length).toEqual(2);
+      expect(categories[0]).toBeInstanceOf(GetCategory);
+      expect(categories[1]).toBeInstanceOf(GetCategory);
     });
   });
 });
