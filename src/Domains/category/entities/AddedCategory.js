@@ -14,4 +14,4 @@ class AddedCategory {
     }
   }
 }
-export default AddedCategory;
+module.exports = AddedCategory;

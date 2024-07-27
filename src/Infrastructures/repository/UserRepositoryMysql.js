@@ -1,7 +1,7 @@
-import { PrismaClient } from '@prisma/client';
-import RegisteredUser from '../../Domains/users/entities/RegisteredUser';
-import UserRepository from '../../Domains/users/UserRepository';
-import InvariantError from '../../Commons/InvariantError';
+const { PrismaClient } = require('@prisma/client');
+const RegisteredUser = require('../../Domains/users/entities/RegisteredUser');
+const UserRepository = require('../../Domains/users/UserRepository');
+const InvariantError = require('../../Commons/InvariantError');
 
 class UserRepositoryMysql extends UserRepository {
   constructor(prisma) {
@@ -58,4 +58,4 @@ class UserRepositoryMysql extends UserRepository {
   }
 }
 
-export default UserRepositoryMysql;
+module.exports = UserRepositoryMysql;

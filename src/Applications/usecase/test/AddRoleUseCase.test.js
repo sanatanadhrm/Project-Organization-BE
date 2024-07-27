@@ -1,7 +1,8 @@
-import RoleRepository from "../../../Domains/role/RoleRepository";
-import AddRole from "../../../Domains/role/entities/AddRole";
-import AddedRole from "../../../Domains/role/entities/AddedRole";
-import AddRoleUseCase from "../AddRoleUseCase";
+const RoleRepository = require("../../../Domains/role/RoleRepository");
+const AddRole = require("../../../Domains/role/entities/AddRole");
+const AddedRole = require("../../../Domains/role/entities/AddedRole");
+const AddRoleUseCase = require("../AddRoleUseCase");
+
 
 describe("AddRoleUseCase", () => {
     it("should orchestrating the add role action correctly", async () => {

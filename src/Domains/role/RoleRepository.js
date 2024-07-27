@@ -12,4 +12,4 @@ class RoleRepository {
     throw new Error('ROLE_REPOSITORY.METHOD_NOT_IMPLEMENTED');
   }
 }
-export default RoleRepository;
+module.exports = RoleRepository;

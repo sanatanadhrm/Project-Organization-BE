@@ -1,6 +1,6 @@
-import AddCategoryUseCase from "../../../../Applications/usecase/AddCategoryUseCase";
-import CategoryRepositoryMysql from "../../../../Infrastructures/repository/CategoryRepositoryMysql";
-import prisma from "../../../../Infrastructures/database/mysql/mysql";
+const AddCategoryUseCase =  require("../../../../Applications/usecase/AddCategoryUseCase");
+const CategoryRepositoryMysql = require("../../../../Infrastructures/repository/CategoryRepositoryMysql");
+const prisma = require("../../../../Infrastructures/database/mysql/mysql");
 
 class CategoryHandler{
     constructor(){
@@ -23,4 +23,4 @@ class CategoryHandler{
 
     }
 }
-export default CategoryHandler;
+module.exports = CategoryHandler;

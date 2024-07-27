@@ -1,6 +1,7 @@
-import AddRoleUseCase from "../../../../Applications/usecase/AddRoleUseCase";
-import RoleRepositoryMysql from "../../../../Infrastructures/repository/RoleRepositoryMysql";
-import prisma from "../../../../Infrastructures/database/mysql/mysql";
+const AddRoleUseCase = require("../../../../Applications/usecase/AddRoleUseCase");
+const RoleRepositoryMysql = require("../../../../Infrastructures/repository/RoleRepositoryMysql");
+const prisma = require("../../../../Infrastructures/database/mysql/mysql");
+
 
 class RoleHandler {
     constructor(){
@@ -8,10 +9,12 @@ class RoleHandler {
     }
     async postRoleHandler(req, res, next){
         try {
+           
             const roleRepository = new RoleRepositoryMysql(prisma);
             const addRoleUseCase = new AddRoleUseCase({
                 roleRepository
             });
+            console.log(req.body,'as');
             const addedRole = await addRoleUseCase.execute(req.body);
             res.status(201).json({
                 status: 'success',
@@ -22,4 +25,4 @@ class RoleHandler {
         }
     }
 }
-export default RoleHandler;
+module.exports = RoleHandler;

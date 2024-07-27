@@ -29,4 +29,4 @@ class UserLogin {
         return emailRegex.test(email);
     }
 }
-export default UserLogin
+module.exports = UserLogin;

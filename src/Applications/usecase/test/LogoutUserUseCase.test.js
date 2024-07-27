@@ -1,5 +1,5 @@
-import { default as AuthenticationRepository } from "../../../Domains/authentication/AuthenticationRepository";
-import LogoutUserUseCase from "../LogoutUserUseCase";
+const AuthenticationRepository = require("../../../Domains/authentication/AuthenticationRepository");
+const LogoutUserUseCase = require("../LogoutUserUseCase");
 
 describe('LogoutUserUseCase', () => {
     it('should orchestrating the logout action correctly', async () => {

@@ -16,4 +16,4 @@ class GetRole {
         }
     }
 }
-export default GetRole;
+module.exports = GetRole;

@@ -1,4 +1,4 @@
-import AddedCategory from "../AddedCategory"
+const AddedCategory = require('../AddedCategory')
 describe('a AddedCategory entities', () => {
   it('should throw error when payload did not contain needed property', () => {
     // Arrange

@@ -1,8 +1,8 @@
-import AddedCategory from "../../../Domains/category/entities/AddedCategory";
-import mysql from '../../../Infrastructures/database/mysql/mysql';
-import CategoryTableHelper from "../../../lib/CategoryTableHelper";
-import CategoryRepositoryMysql from "../CategoryRepositoryMysql";
-import InvariantError from "../../../Commons/InvariantError";
+const AddedCategory = require("../../../Domains/category/entities/AddedCategory");
+const mysql = require('../../../Infrastructures/database/mysql/mysql');
+const CategoryTableHelper = require("../../../lib/CategoryTableHelper");
+const CategoryRepositoryMysql = require("../CategoryRepositoryMysql");
+const InvariantError = require("../../../Commons/InvariantError");
 
 describe('CategoryRepositoryMysql', () => {
   beforeEach(async () => {

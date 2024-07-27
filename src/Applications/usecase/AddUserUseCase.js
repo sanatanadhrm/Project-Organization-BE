@@ -1,5 +1,6 @@
-import RegisterUser from '../../Domains/users/entities/RegisterUser'
-import AddOrganization from '../../Domains/organization/entities/AddOrganization'
+const RegisterUser = require('../../Domains/users/entities/RegisterUser');
+const AddOrganization = require('../../Domains/organization/entities/AddOrganization');
+
 
 class AddUserUseCase {
   constructor ({ userRepository, passwordHash, categoryRepository, organizationRepository, roleRepository}) {
@@ -31,4 +32,4 @@ class AddUserUseCase {
   }
 }
 
-export default AddUserUseCase
+module.exports = AddUserUseCase

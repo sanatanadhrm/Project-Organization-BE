@@ -1,4 +1,4 @@
-import CategoryRepository from "../CategoryRepository"
+const CategoryRepository = require('../CategoryRepository')
 
 describe('CategoryRepository interface', () => {
   it('should throw error when invoke abstract behavior', async () => {

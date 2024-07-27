@@ -1,13 +1,14 @@
-import express, { json, urlencoded } from 'express';
-import jwt from 'jsonwebtoken';
+const express = require('express');
+const { json, urlencoded } = require('express');
+const jwt = require('jsonwebtoken');
 
-import users from '../../Interfaces/http/api/users';
-import category from '../../Interfaces/http/api/category'
-import roles from '../../Interfaces/http/api/role'
-import login from '../../Interfaces/http/api/login'
+const users = require('../../Interfaces/http/api/users');
+const category = require('../../Interfaces/http/api/category');
+const roles = require('../../Interfaces/http/api/role');
+const login = require('../../Interfaces/http/api/login');
 
-import ClientError from '../../Commons/ClientError';
-import DomainErrorTranslator from '../../Commons/DomainErrorTranslator';
+const ClientError = require('../../Commons/ClientError');
+const DomainErrorTranslator = require('../../Commons/DomainErrorTranslator');
 
 const createServer = () => {
     const app = express();
@@ -60,4 +61,4 @@ const createServer = () => {
     app.use(errorHandler);
     return app;
 };
-export default createServer;
+module.exports = createServer;

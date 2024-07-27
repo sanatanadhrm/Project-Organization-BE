@@ -23,4 +23,4 @@ class AddOrganization {
 
   }
   
-  export default AddOrganization
+module.exports = AddOrganization

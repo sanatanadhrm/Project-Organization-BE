@@ -27,4 +27,4 @@ const AuthenticationTableHelper = {
         });
     },
 };
-export default AuthenticationTableHelper;
+module.exports = AuthenticationTableHelper;

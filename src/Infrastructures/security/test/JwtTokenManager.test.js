@@ -1,6 +1,6 @@
-import jwt from 'jsonwebtoken';
-import JwtTokenManager from '../JwtTokenManager';
-import InvariantError from '../../../Commons/InvariantError';
+const jwt = require('jsonwebtoken');
+const JwtTokenManager = require('../JwtTokenManager');
+const InvariantError = require('../../../Commons/InvariantError');
 
 describe('JwtTokenManager', () => {
   describe('createAccessToken function', () => {

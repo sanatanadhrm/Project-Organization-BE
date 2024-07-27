@@ -1,5 +1,5 @@
-import jwt from 'jsonwebtoken';
-import InvariantError from '../../Commons/InvariantError';
+const jwt = require('jsonwebtoken');
+const InvariantError = require('../../Commons/InvariantError');
 
 class JwtTokenManager {
   constructor(jwtLib) {
@@ -29,4 +29,4 @@ class JwtTokenManager {
   }
 }
 
-export default JwtTokenManager;
+module.exports = JwtTokenManager;

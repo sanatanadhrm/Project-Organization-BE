@@ -1,7 +1,8 @@
-import AddedCategory from "../../../Domains/category/entities/AddedCategory";
-import CategoryRepository from "../../../Domains/category/CategoryRepository";
-import AddCategoryUseCase from "../AddCategoryUseCase";
-import NewCategory from "../../../Domains/category/entities/NewCategory";
+const AddedCategory = require("../../../Domains/category/entities/AddedCategory");
+const CategoryRepository = require("../../../Domains/category/CategoryRepository");
+const AddCategoryUseCase = require("../AddCategoryUseCase");
+const NewCategory = require("../../../Domains/category/entities/NewCategory");
+
 
 describe('AddCategoryUseCase', () => {
     it('should orchestrating the add category action correctly', async () => {

@@ -14,4 +14,4 @@ const CategoryTableHelper = {
         });
     },
 };
-export default CategoryTableHelper;
+module.exports = CategoryTableHelper;

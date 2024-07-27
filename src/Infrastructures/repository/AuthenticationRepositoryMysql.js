@@ -1,5 +1,5 @@
-import AuthenticationRepository from "../../Domains/authentication/AuthenticationRepository";
-import InvariantError from "../../Commons/InvariantError";
+const AuthenticationRepository = require("../../Domains/authentication/AuthenticationRepository");
+const InvariantError = require("../../Commons/InvariantError");
 
 class AuthenticationRepositoryMysql extends AuthenticationRepository {
   constructor(prisma) {
@@ -32,4 +32,4 @@ class AuthenticationRepositoryMysql extends AuthenticationRepository {
     });
   }
 }
-export default AuthenticationRepositoryMysql;
+module.exports = AuthenticationRepositoryMysql;

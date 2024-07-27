@@ -12,5 +12,5 @@ class CategoryRepository {
     }
   }
   
-  export default CategoryRepository;
+module.exports = CategoryRepository;
   

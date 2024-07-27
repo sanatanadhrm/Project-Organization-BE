@@ -1,6 +1,6 @@
-import { Router } from 'express';
-import RoleHandler from './handler';
-import routes from './routes';
+const { Router } = require('express');
+const RoleHandler = require('./handler');
+const routes = require('./routes');
 
 
 const router = Router();
@@ -9,4 +9,4 @@ const roleHandler = new RoleHandler();
 
 routes(router, roleHandler);
 
-export default router;
+module.exports = router;

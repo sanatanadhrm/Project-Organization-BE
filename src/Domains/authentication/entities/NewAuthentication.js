@@ -19,5 +19,5 @@ class NewAuthentication {
     }
   }
   
-  export default NewAuthentication
+module.exports = NewAuthentication
   

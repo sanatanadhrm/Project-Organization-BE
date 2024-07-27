@@ -1,4 +1,4 @@
-import RoleRepository from "../RoleRepository";
+const RoleRepository = require("../RoleRepository");
 
 describe("RoleRepository interface", () => {
     it("should throw error when invoke abstract behavior", async () => {

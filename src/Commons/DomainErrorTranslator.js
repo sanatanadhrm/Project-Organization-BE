@@ -1,4 +1,4 @@
-import InvariantError from "./InvariantError"
+const InvariantError = require('../Commons/InvariantError')
 const DomainErrorTranslator = {
     translate (error) {
       return DomainErrorTranslator._directories[error.message] || error
@@ -13,4 +13,4 @@ DomainErrorTranslator._directories = {
 'CATEGORY_ID_NOT_FOUND': new InvariantError('tidak dapat membuat user baru karena category_id tidak valid'),
 'USER_EMAIL.NOT_MATCH': new InvariantError('email tidak di temukan'),
 }
-export default DomainErrorTranslator
+module.exports = DomainErrorTranslator

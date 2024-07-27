@@ -1,11 +1,11 @@
 const request = require('supertest'); // Tambahkan impor ini
-const createServer = require('../CreateServer').default; // Sesuaikan dengan path yang benar
+const createServer = require('../CreateServer'); // Sesuaikan dengan path yang benar
 const { PrismaClient } = require('@prisma/client');
-import UserTableHelperr from '../../../lib/UserTableHelper';
-import CategoryTableHelper from '../../../lib/CategoryTableHelper';
-import RoleTableHelper from '../../../lib/RoleTableHelper';
-import OrganizationTableHelper from '../../../lib/OrganizationTableHelper';
-import AddedOrganization from '../../../Domains/organization/entities/AddedOrganization';
+const UserTableHelper = require('../../../lib/UserTableHelper');
+const CategoryTableHelper = require('../../../lib/CategoryTableHelper');
+const RoleTableHelper = require('../../../lib/RoleTableHelper');
+const OrganizationTableHelper = require('../../../lib/OrganizationTableHelper');
+const AddedOrganization = require('../../../Domains/organization/entities/AddedOrganization');
 const { category } = require('../../database/mysql/mysql');
 
 const prisma = new PrismaClient();
@@ -22,7 +22,7 @@ describe('Users API', () => {
 
   afterEach(async () => {
     await OrganizationTableHelper.cleanTable();
-    await UserTableHelperr.cleanTable();
+    await UserTableHelper.cleanTable();
     await CategoryTableHelper.cleanTable();
     await RoleTableHelper.cleanTable();
     

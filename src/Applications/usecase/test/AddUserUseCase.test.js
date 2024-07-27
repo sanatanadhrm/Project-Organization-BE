@@ -1,13 +1,14 @@
-import RegisterUser from '../../../Domains/users/entities/RegisterUser';
-import RegisteredUser from '../../../Domains/users/entities/RegisteredUser';
-import UserRepository from '../../../Domains/users/UserRepository';
-import PasswordHash from '../../security/PasswordHash';
-import AddUserUseCase from '../AddUserUseCase';
-import CategoryRepository from '../../../Domains/category/CategoryRepository';
-import OrganizationRepository from '../../../Domains/organization/OrganizationRepository';
-import AddedOrganization from '../../../Domains/organization/entities/AddedOrganization';
-import AddOrganization from '../../../Domains/organization/entities/AddOrganization';
-import RoleRepository from '../../../Domains/role/RoleRepository';
+const RegisterUser = require('../../../Domains/users/entities/RegisterUser');
+const RegisteredUser = require('../../../Domains/users/entities/RegisteredUser');
+const UserRepository = require('../../../Domains/users/UserRepository');
+const PasswordHash = require('../../security/PasswordHash');
+const AddUserUseCase = require('../AddUserUseCase');
+const CategoryRepository = require('../../../Domains/category/CategoryRepository');
+const OrganizationRepository = require('../../../Domains/organization/OrganizationRepository');
+const AddedOrganization = require('../../../Domains/organization/entities/AddedOrganization');
+const AddOrganization = require('../../../Domains/organization/entities/AddOrganization');
+const RoleRepository = require('../../../Domains/role/RoleRepository');
+
 
 describe('AddUserUseCase', () => {
   /**

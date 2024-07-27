@@ -1,6 +1,6 @@
-import OrganizationRepository from "../../Domains/organization/OrganizationRepository"
-import AddedOrganization from "../../Domains/organization/entities/AddedOrganization"
-import InvariantError from "../../Commons/InvariantError"
+const OrganizationRepository = require("../../Domains/organization/OrganizationRepository");
+const AddedOrganization = require("../../Domains/organization/entities/AddedOrganization");
+const InvariantError = require("../../Commons/InvariantError");
 
 class OrganizationRepositoryMysql extends OrganizationRepository{
 
@@ -17,4 +17,4 @@ class OrganizationRepositoryMysql extends OrganizationRepository{
     return new AddedOrganization(newOrganization)
   }
 }
-export default OrganizationRepositoryMysql
+module.exports = OrganizationRepositoryMysql

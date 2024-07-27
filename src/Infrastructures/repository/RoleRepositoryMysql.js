@@ -1,7 +1,7 @@
-import InvariantError from "../../Commons/InvariantError";
-import { default as RoleRepository } from "../../Domains/role/RoleRepository";
-import AddedRole from "../../Domains/role/entities/AddedRole";
-import GetRole from "../../Domains/role/entities/GetRole";
+const InvariantError = require("../../Commons/InvariantError");
+const RoleRepository = require("../../Domains/role/RoleRepository");
+const AddedRole = require("../../Domains/role/entities/AddedRole");
+const GetRole = require("../../Domains/role/entities/GetRole");
 
 class RoleRepositoryMysql extends RoleRepository {
     constructor(prisma){
@@ -16,9 +16,11 @@ class RoleRepositoryMysql extends RoleRepository {
         return new AddedRole(newRole);
     }
     async verifyAvailableRole(name){
+        console.log(name,'a1s');
         const role = await this._prisma.role.findFirst({
             where: { name },
-        });
+        })
+        console.log(role,'a2s');
         if(role){
             throw new InvariantError("ROLE_NAME_ALREADY_EXISTS");
         }
@@ -43,4 +45,4 @@ class RoleRepositoryMysql extends RoleRepository {
         ));
     }
 }
-export default RoleRepositoryMysql;
+module.exports = RoleRepositoryMysql;

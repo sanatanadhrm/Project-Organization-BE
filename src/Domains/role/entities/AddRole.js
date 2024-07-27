@@ -16,4 +16,4 @@ class AddRole {
         }
     }
 }
-export default AddRole;
+module.exports = AddRole;

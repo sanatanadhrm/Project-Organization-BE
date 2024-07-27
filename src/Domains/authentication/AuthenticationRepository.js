@@ -12,4 +12,4 @@ class AuthenticationRepository {
     }
   }
   
-  export default AuthenticationRepository
+module.exports = AuthenticationRepository

@@ -1,7 +1,7 @@
-import AuthenticationRepositoryMysql from "../AuthenticationRepositoryMysql";
-import InvariantError from "../../../Commons/InvariantError";
-import mysql from '../../../Infrastructures/database/mysql/mysql';
-import AuthenticationTableHelper from "../../../lib/AuthenticationTableHelper";
+const AuthenticationRepositoryMysql = require("../AuthenticationRepositoryMysql");
+const InvariantError = require("../../../Commons/InvariantError");
+const mysql = require('../../../Infrastructures/database/mysql/mysql');
+const AuthenticationTableHelper = require("../../../lib/AuthenticationTableHelper");
 
 describe('AuthenticationRepositoryMysql', () => {
     beforeEach(async () => {

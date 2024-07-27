@@ -28,4 +28,4 @@ const RoleTableHelper = {
         });
     },
 };
-export default RoleTableHelper;
+module.exports = RoleTableHelper;

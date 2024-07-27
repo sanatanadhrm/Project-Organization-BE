@@ -1,4 +1,4 @@
-import AddOrganization from '../AddOrganization'
+const AddOrganization = require('../AddOrganization')
 
 describe('a Add Organization entities', () => {
   it('should throw error when payload did not contain needed property', () => {

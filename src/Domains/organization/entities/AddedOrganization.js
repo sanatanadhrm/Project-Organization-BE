@@ -22,4 +22,4 @@ class AddedOrganization {
 
   }
   
-  export default AddedOrganization
+module.exports = AddedOrganization

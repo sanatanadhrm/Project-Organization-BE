@@ -1,11 +1,11 @@
-import UserRepositoryMysql from "../../../../Infrastructures/repository/UserRepositoryMysql";
-import prisma from "../../../../Infrastructures/database/mysql/mysql";
-import AuthenticationRepositoryMysql from "../../../../Infrastructures/repository/AuthenticationRepositoryMysql";
-import bcrypt from 'bcrypt'
-import JwtTokenManager from "../../../../Infrastructures/security/JwtTokenManager";
-import jwt from 'jsonwebtoken';
-import BcryptPasswordHash from "../../../../Infrastructures/security/BcryptPasswordHash";
-import LoginUserUseCase from "../../../../Applications/usecase/LoginUserUseCase";
+const UserRepositoryMysql = require("../../../../Infrastructures/repository/UserRepositoryMysql");
+const prisma = require("../../../../Infrastructures/database/mysql/mysql");
+const AuthenticationRepositoryMysql = require("../../../../Infrastructures/repository/AuthenticationRepositoryMysql");
+const bcrypt = require('bcrypt');
+const JwtTokenManager = require("../../../../Infrastructures/security/JwtTokenManager");
+const jwt = require('jsonwebtoken');
+const BcryptPasswordHash = require("../../../../Infrastructures/security/BcryptPasswordHash");
+const LoginUserUseCase = require("../../../../Applications/usecase/LoginUserUseCase");
 
 class LoginHandler {
     constructor(){
@@ -34,4 +34,4 @@ class LoginHandler {
         }
     }
 }
-export default LoginHandler;
+module.exports = LoginHandler;

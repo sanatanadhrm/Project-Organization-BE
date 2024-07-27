@@ -36,4 +36,4 @@ class RegisterUser {
       }
   }
   
-  export default RegisterUser
+module.exports = RegisterUser;

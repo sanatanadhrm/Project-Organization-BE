@@ -3,4 +3,4 @@ class OrganizationRepository {
     throw new Error('ORGANIZATION_REPOSITORY.METHOD_NOT_IMPLEMENTED');
   }
 }
-export default OrganizationRepository;
+module.exports = OrganizationRepository;

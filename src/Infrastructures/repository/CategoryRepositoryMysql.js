@@ -1,6 +1,6 @@
-import InvariantError from "../../Commons/InvariantError";
-import CategoryRepository from "../../Domains/category/CategoryRepository";
-import AddedCategory from "../../Domains/category/entities/AddedCategory";
+const InvariantError = require("../../Commons/InvariantError");
+const CategoryRepository = require("../../Domains/category/CategoryRepository");
+const AddedCategory = require("../../Domains/category/entities/AddedCategory");
 
 class CategoryRepositoryMysql extends CategoryRepository {
   constructor(prisma) {
@@ -36,4 +36,4 @@ class CategoryRepositoryMysql extends CategoryRepository {
   }
 }
 
-export default CategoryRepositoryMysql;
+module.exports = CategoryRepositoryMysql;

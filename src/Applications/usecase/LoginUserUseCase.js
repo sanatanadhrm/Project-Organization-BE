@@ -1,6 +1,6 @@
 
-import NewAuthentication from '../../Domains/authentication/entities/NewAuthentication'
-import UserLogin from '../../Domains/users/entities/UserLogin'
+const NewAuthentication = require('../../Domains/authentication/entities/NewAuthentication');
+const UserLogin = require('../../Domains/users/entities/UserLogin');
 
 class LoginUserUseCase {
   constructor ({
@@ -39,6 +39,4 @@ class LoginUserUseCase {
     return newAuthentication
   }
 }
-export default LoginUserUseCase
-
 module.exports = LoginUserUseCase

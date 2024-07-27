@@ -1,4 +1,4 @@
-import AuthenticationRepository from '../AuthenticationRepository'
+const AuthenticationRepository = require('../AuthenticationRepository')
 
 describe('AuthenticationRepository interface', () => {
   it('should throw error when invoke unimplemented method', async () => {

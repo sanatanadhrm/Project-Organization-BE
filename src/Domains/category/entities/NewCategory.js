@@ -13,4 +13,4 @@ class NewCategory {
         }
     }
 }
-export default NewCategory;
+module.exports = NewCategory;

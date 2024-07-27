@@ -1,4 +1,4 @@
-import NewCategory from "../../Domains/category/entities/NewCategory";
+const NewCategory = require("../../Domains/category/entities/NewCategory");
 
 class AddCategoryUseCase {
     constructor({ categoryRepository }) {
@@ -11,4 +11,4 @@ class AddCategoryUseCase {
         return this._categoryRepository.addCategory(addedCategory);
     }
 }
-export default AddCategoryUseCase;
+module.exports = AddCategoryUseCase;

@@ -14,4 +14,4 @@ const OrganizationTableHelper = {
     //     });
     // },
 };
-export default OrganizationTableHelper;
+module.exports = OrganizationTableHelper;

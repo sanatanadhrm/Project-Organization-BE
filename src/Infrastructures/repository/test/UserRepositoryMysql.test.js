@@ -1,8 +1,8 @@
-import RegisteredUser from '../../../Domains/users/entities/RegisteredUser';
-import UserRepositoryMysql from '../UserRepositoryMysql';
-import mysql, { category } from '../../../Infrastructures/database/mysql/mysql';
-import InvariantError from '../../../Commons/InvariantError';
-const { cleanTable, findUsersByEmail, addRoleTable, addUser} = require('../../../lib/UserTableHelper');
+const RegisteredUser = require('../../../Domains/users/entities/RegisteredUser');
+const UserRepositoryMysql = require('../UserRepositoryMysql');
+const mysql = require('../../../Infrastructures/database/mysql/mysql');
+const InvariantError = require('../../../Commons/InvariantError');
+const { cleanTable, findUsersByEmail, addRoleTable, addUser } = require('../../../lib/UserTableHelper');
 
 describe('UserRepositoryMysql', () => {
 

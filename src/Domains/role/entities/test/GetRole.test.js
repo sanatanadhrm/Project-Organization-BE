@@ -1,4 +1,4 @@
-import GetRole from "../GetRole";
+const GetRole = require("../GetRole");
 
 describe("GetRole entities", () => {
     it("should throw error when payload did not contain needed property", () => {

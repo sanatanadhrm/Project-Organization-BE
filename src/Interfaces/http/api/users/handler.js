@@ -1,11 +1,12 @@
-import AddUserUseCase from "../../../../Applications/usecase/AddUserUseCase";
-import UserRepositoryMysql from "../../../../Infrastructures/repository/UserRepositoryMysql";
-import prisma from "../../../../Infrastructures/database/mysql/mysql";
-import bcrypt from 'bcrypt'
-import BcryptPasswordHash from "../../../../Infrastructures/security/BcryptPasswordHash";
-import CategoryRepositoryMysql from "../../../../Infrastructures/repository/CategoryRepositoryMysql";
-import OrganizationRepositoryMysql from "../../../../Infrastructures/repository/OrganizationRepositoryMysql";
-import RoleRepositoryMysql from "../../../../Infrastructures/repository/RoleRepositoryMysql";
+const AddUserUseCase = require("../../../../Applications/usecase/AddUserUseCase");
+const UserRepositoryMysql = require("../../../../Infrastructures/repository/UserRepositoryMysql");
+const prisma = require("../../../../Infrastructures/database/mysql/mysql");
+const bcrypt = require('bcrypt');
+const BcryptPasswordHash = require("../../../../Infrastructures/security/BcryptPasswordHash");
+const CategoryRepositoryMysql = require("../../../../Infrastructures/repository/CategoryRepositoryMysql");
+const OrganizationRepositoryMysql = require("../../../../Infrastructures/repository/OrganizationRepositoryMysql");
+const RoleRepositoryMysql = require("../../../../Infrastructures/repository/RoleRepositoryMysql");
+
 class UsersHandler {
   constructor(){
 

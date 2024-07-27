@@ -1,9 +1,9 @@
-import RoleRepositoryMysql from "../RoleRepositoryMysql";
-import mysql from "../../database/mysql/mysql";
-import RoleTableHelper from "../../../lib/RoleTableHelper";
-import InvariantError from "../../../Commons/InvariantError";
-import AddedRole from "../../../Domains/role/entities/AddedRole";
-import GetRole from "../../../Domains/role/entities/GetRole";
+const RoleRepositoryMysql = require("../RoleRepositoryMysql");
+const mysql = require("../../database/mysql/mysql");
+const RoleTableHelper = require("../../../lib/RoleTableHelper");
+const InvariantError = require("../../../Commons/InvariantError");
+const AddedRole = require("../../../Domains/role/entities/AddedRole");
+const GetRole = require("../../../Domains/role/entities/GetRole");
 
 describe('RoleRepositoryMysql', () => {
     beforeEach(async () => {

@@ -1,10 +1,10 @@
-import AuthenticationTableHelper from '../../../lib/AuthenticationTableHelper';
-import CategoryTableHelper from '../../../lib/CategoryTableHelper';
-import OrganizationTableHelper from '../../../lib/OrganizationTableHelper';
-import RoleTableHelper from '../../../lib/RoleTableHelper';
-import UserTableHelper from '../../../lib/UserTableHelper';
-import prisma from '../../database/mysql/mysql';
-import createServer from '../CreateServer';
+const AuthenticationTableHelper = require('../../../lib/AuthenticationTableHelper');
+const CategoryTableHelper = require('../../../lib/CategoryTableHelper');
+const OrganizationTableHelper = require('../../../lib/OrganizationTableHelper');
+const RoleTableHelper = require('../../../lib/RoleTableHelper');
+const UserTableHelper = require('../../../lib/UserTableHelper');
+const prisma = require('../../database/mysql/mysql');
+const createServer = require('../CreateServer');
 const request = require('supertest');
 
 describe('authentication', () => {

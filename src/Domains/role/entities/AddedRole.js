@@ -14,4 +14,4 @@ class AddedRole {
         }
     }
 }
-export default AddedRole;
+module.exports = AddedRole;

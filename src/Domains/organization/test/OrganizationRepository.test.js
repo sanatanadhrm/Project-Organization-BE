@@ -1,4 +1,4 @@
-import OrganizationRepository from '../OrganizationRepository';
+const OrganizationRepository = require('../OrganizationRepository');
 
 describe('OrganizationRepository interface', () => {
     it('should throw error when invoke abstract behavior', async () => {

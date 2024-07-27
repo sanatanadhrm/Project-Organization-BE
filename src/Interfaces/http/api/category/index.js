@@ -1,6 +1,6 @@
-import { Router } from 'express';
-import CategoryHandler from './handler';
-import routes from './routes';
+const { Router } = require('express');
+const CategoryHandler = require('./handler');
+const routes = require('./routes');
 
 
 const router = Router();
@@ -9,4 +9,4 @@ const categoryHandler = new CategoryHandler();
 
 routes(router, categoryHandler);
 
-export default router;
+module.exports = router;
