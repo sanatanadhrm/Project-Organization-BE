@@ -1,5 +1,6 @@
 const express = require('express');
 const { json, urlencoded } = require('express');
+const cors = require('cors');
 const jwt = require('jsonwebtoken');
 
 const users = require('../../Interfaces/http/api/users');
@@ -15,6 +16,7 @@ const createServer = () => {
 
     // Middleware untuk JWT
     app.use(json());
+    app.use(cors());
     app.use(urlencoded({ extended: true }));
     const errorHandler = (err, req, res, next) => {
         if (err instanceof Error) {
