@@ -7,6 +7,7 @@ const users = require('../../Interfaces/http/api/users');
 const category = require('../../Interfaces/http/api/category');
 const roles = require('../../Interfaces/http/api/role');
 const login = require('../../Interfaces/http/api/login');
+const logout = require('../../Interfaces/http/api/logout');
 
 const ClientError = require('../../Commons/ClientError');
 const DomainErrorTranslator = require('../../Commons/DomainErrorTranslator');
@@ -58,6 +59,7 @@ const createServer = () => {
     app.use('/roles', roles);
     app.use('/sign-in', login);
     app.use(authenticateJWT);
+    app.use('/sign-out', logout)
    
     
     app.use(errorHandler);

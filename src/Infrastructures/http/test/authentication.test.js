@@ -79,16 +79,52 @@ describe('authentication', () => {
             expect(response.status).toEqual(401);
             expect(response.body.message).toEqual('kredensial yang Anda masukkan salah');
         });
+
+        it('should response 400 when email not found', async () => {
+            const response = await request(server)
+                .post('/sign-in')
+                .send({
+                    email: 'test@gmail.com',
+                    password: 'password'
+                });
+            expect(response.status).toEqual(400);
+            expect(response.body.message).toEqual('email tidak di temukan');
+        });
     });
 
-    it('should response 400 when email not found', async () => {
-        const response = await request(server)
-            .post('/sign-in')
-            .send({
-                email: 'test@gmail.com',
-                password: 'password'
-            });
-        expect(response.status).toEqual(400);
-        expect(response.body.message).toEqual('email tidak di temukan');
+    describe('when POST /sign-out', () => {
+        it('should response 200 and message', async () => {
+            const responseRole = await request(server)
+                .post('/roles/add')
+                .send({ name: 'organization' });
+            const responseCategory = await request(server)
+                .post('/category/add')
+                .send({ name: 'sports' });
+            const responseUser = await request(server)
+                .post('/users/add')
+                .send({
+                    email: 'test@gmail.com',
+                    password: 'password',
+                    name: 'test',
+                    role_id: responseRole.body.data.id,
+                    category: responseCategory.body.data.id
+                });
+            const responseSignIn = await request(server)
+                .post('/sign-in')
+                .send({
+                    email: 'test@gmail.com',
+                    password: 'password'
+                });
+            console.log(responseSignIn.body.data.refreshToken);
+            const response = await request(server)
+                .post('/sign-out')
+                .set('Authorization', `Bearer ${responseSignIn.body.data.accessToken}`)
+                .send({ refreshToken: responseSignIn.body.data.refreshToken });
+            expect(response.status).toEqual(200);
+            expect(response.body.status).toEqual('success');
+        });
+                    
     });
+
+    
 });

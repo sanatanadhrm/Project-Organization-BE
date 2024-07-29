@@ -28,4 +28,34 @@ describe('LogoutUserUseCase', () => {
         expect(mockAuthenticationRepository.deleteToken)
             .toHaveBeenCalledWith(payload.refreshToken)
     });
+
+    it("should throw error if use case payload not contain refreshToken", async () => {
+        // Arrange
+        const payload = {
+            refreshToken: ""
+        };
+        const logoutUserUseCase = new LogoutUserUseCase({
+            authenticationRepository: {}
+        });
+
+        // Action & Assert
+        await expect(logoutUserUseCase.execute(payload))
+            .rejects
+            .toThrowError("DELETE_AUTHENTICATION_USE_CASE.NOT_CONTAIN_REFRESH_TOKEN");
+    });
+
+    it("should throw error if use case payload not meet data type specification", async () => {
+        // Arrange
+        const payload = {
+            refreshToken: 123
+        };
+        const logoutUserUseCase = new LogoutUserUseCase({
+            authenticationRepository: {}
+        });
+
+        // Action & Assert
+        await expect(logoutUserUseCase.execute(payload))
+            .rejects
+            .toThrowError("DELETE_AUTHENTICATION_USE_CASE.PAYLOAD_NOT_MEET_DATA_TYPE_SPECIFICATION");
+    });
 });
