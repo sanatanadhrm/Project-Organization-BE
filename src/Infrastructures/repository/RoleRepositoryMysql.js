@@ -16,11 +16,9 @@ class RoleRepositoryMysql extends RoleRepository {
         return new AddedRole(newRole);
     }
     async verifyAvailableRole(name){
-        console.log(name,'a1s');
         const role = await this._prisma.role.findFirst({
             where: { name },
         })
-        console.log(role,'a2s');
         if(role){
             throw new InvariantError("ROLE_NAME_ALREADY_EXISTS");
         }

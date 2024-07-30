@@ -28,7 +28,6 @@ class CategoryRepositoryMysql extends CategoryRepository {
 
   async getCategory() {
     const categories = await this._prisma.category.findMany();
-    console.log(categories,'catehgasdasdasd');
     return categories.map((category) => new GetCategory(category));
   }
 

@@ -115,7 +115,6 @@ describe('authentication', () => {
                     email: 'test@gmail.com',
                     password: 'password'
                 });
-            console.log(responseSignIn.body.data.refreshToken);
             const response = await request(server)
                 .post('/sign-out')
                 .set('Authorization', `Bearer ${responseSignIn.body.data.accessToken}`)

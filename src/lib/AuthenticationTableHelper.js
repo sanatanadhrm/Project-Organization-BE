@@ -19,12 +19,12 @@ const AuthenticationTableHelper = {
         });
         return responsetoken;
     },
-    async deleteToken(token) {
-        await prisma.authentication.delete({
-        where: {
-            token,
-        },
-        });
-    },
+    // async deleteToken(token) {
+    //     await prisma.authentication.delete({
+    //     where: {
+    //         token,
+    //     },
+    //     });
+    // },
 };
 module.exports = AuthenticationTableHelper;

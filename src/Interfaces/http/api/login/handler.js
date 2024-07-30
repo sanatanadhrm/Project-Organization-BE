@@ -12,7 +12,6 @@ class LoginHandler {
         this.postLoginHandler = this.postLoginHandler.bind(this);
     }
     async postLoginHandler(req, res, next) {
-        console.log(req.body);
         try { 
             const userRepository = new UserRepositoryMysql(prisma);
             const authenticationRepository = new AuthenticationRepositoryMysql(prisma);

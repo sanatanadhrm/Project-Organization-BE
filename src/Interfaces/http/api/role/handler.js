@@ -16,7 +16,6 @@ class RoleHandler {
             const getRoleUseCase = new GetRoleUseCase({
                 roleRepository
             });
-            console.log('masuk');
             const role = await getRoleUseCase.execute();
             res.status(200).json({
                 status: 'success',
@@ -34,7 +33,6 @@ class RoleHandler {
             const addRoleUseCase = new AddRoleUseCase({
                 roleRepository
             });
-            console.log(req.body,'as');
             const addedRole = await addRoleUseCase.execute(req.body);
             res.status(201).json({
                 status: 'success',

@@ -18,7 +18,7 @@ model User {
   email        String        @unique
   password     String
   name         String?
-  role         Role          @relation(fields: [role_id], references: [id])
+  role         Role          @relation(fields: [role_id], references: [id], onDelete: Cascade)
   role_id      Int
   organization Organization?
   createdAt    DateTime      @default(now())
@@ -36,9 +36,9 @@ model Role {
 model Organization {
   id          Int      @id @default(autoincrement())
   name        String
-  user        User     @relation(fields: [user_id], references: [id])
+  user        User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
   user_id     Int      @unique
-  category    Category @relation(fields: [category_id], references: [id])
+  category    Category @relation(fields: [category_id], references: [id], onDelete: Cascade)
   category_id Int
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt

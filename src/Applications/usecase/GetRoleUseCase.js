@@ -6,7 +6,6 @@ class GetRoleUseCase {
     }
     async execute() {
         const role = await this._roleRepository.getAllRole();
-        console.log(role,'masuk22');
         return role.map((rol) => new GetRole(rol));
     }
 }

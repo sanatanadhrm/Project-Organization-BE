@@ -7,5 +7,6 @@ describe('OrganizationRepository interface', () => {
     
         // Action and Assert
         await expect(organizationRepository.createOrganization({})).rejects.toThrow('ORGANIZATION_REPOSITORY.METHOD_NOT_IMPLEMENTED');
+        await expect(organizationRepository.getAllOrganization()).rejects.toThrow('ORGANIZATION_REPOSITORY.METHOD_NOT_IMPLEMENTED');
     });
 });

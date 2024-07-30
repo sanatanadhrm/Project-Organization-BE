@@ -8,9 +8,7 @@ class AddRoleUseCase {
     }
     async execute(useCasePayload) {
         const addRole = new AddRole(useCasePayload);
-        console.log(useCasePayload,'a3s');
         await this._roleRepository.verifyAvailableRole(addRole.name);
-        console.log(useCasePayload,'a4s');
         return this._roleRepository.addRole(addRole);
     }
 }
